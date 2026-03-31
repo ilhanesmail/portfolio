@@ -14,7 +14,7 @@
   --text-primary:   #f5f5f7;
   --text-secondary: #a1a1a6;
   --text-tertiary:  #6e6e73;
-  --accent:         #e6841c;
+  --accent:         #ed7b58;
   --accent-dim:     rgba(255, 107, 0, 0.12);
   --accent-hover:   #f7a752;
 
@@ -408,26 +408,20 @@ h1, h2, h3, h4 {
   display: block;
 }
 
-/* Scroll indicator */
-.hero__scroll {
+/* Hexagonal canvas background */
+.hero__hex-canvas {
   position: absolute;
-  bottom: var(--space-10);
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
-.hero__scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, var(--text-tertiary), transparent);
-  animation: scrollBounce 2s var(--ease) infinite;
-}
-@keyframes scrollBounce {
-  0%, 100% { transform: scaleY(1); opacity: 0.5; }
-  50%       { transform: scaleY(0.6); opacity: 1; }
+
+/* Ensure hero content sits above canvas */
+.hero__inner {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── 8. ABOUT ───────────────────────────────────────────── */

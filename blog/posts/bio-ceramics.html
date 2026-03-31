@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Bio-Inspired Microstructures Changed My Perspective About Manufacturing — Ilhan Esmail</title>
+  <meta name="description" content="A look at the ceramic research that led to a 220% toughness increase — and what nature's design language taught me about process engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar navbar--scrolled" id="navbar">
+    <div class="navbar__inner">
+      <a href="../../index.html" class="navbar__logo">IE<span class="accent">.</span></a>
+      <nav class="navbar__nav" id="navMenu" role="navigation">
+        <ul class="navbar__list">
+          <li><a href="../../index.html#about"      class="navbar__link">About</a></li>
+          <li><a href="../../index.html#experience" class="navbar__link">Experience</a></li>
+          <li><a href="../../index.html#skills"     class="navbar__link">Skills</a></li>
+          <li><a href="../../index.html#education"  class="navbar__link">Education</a></li>
+          <li><a href="../index.html"               class="navbar__link navbar__link--active">Blog</a></li>
+          <li><a href="../../index.html#contact"    class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="post-page">
+    <div class="post-container">
+
+      <a href="../index.html" class="post__back">← All Posts</a>
+
+      <header class="post__header">
+        <time class="post__date" datetime="2026-03-30">September 30, 2023</time>
+        <h1 class="post__title">How Bio-Inspired Microstructures Changed My Perspective About Manufacturing</h1>
+        <p class="post__excerpt">
+          A look at the ceramic research that led to a 220% toughness increase — and what
+          nature's design language taught me about process engineering.
+        </p>
+      </header>
+
+      <img
+        class="post__hero"
+        src="../images/cnn_nacre.png"
+        alt="CNN classification output showing biological microstructures in nacre"
+      />
+
+      <article class="post-body">
+
+        <p>
+          During my time at the NRC-CNRC, I explored how to characterise the microstructure of a 
+          ceramic sample and understand why certain biological analogues were so much tougher than 
+          their synthetic counterparts. This 12-month research exploration, coupled with a fellowship
+          experience at MIT, gave me a fascinating insight into the world of bio-inspired structures and
+          our evolution of manufacturing technologies in order to mimic nature.
+        </p>
+
+        <h2>The Problem With Brittle Ceramics</h2>
+
+        <p>
+          Ceramics are a valuble class of materials — heat resistant, wear resistant, chemically inert. But
+          their Achilles heel has always been brittleness. Under stress, a crack propagates almost
+          instantaneously through the material with virtually no energy absorption. For aerospace
+          and structural applications, this is a critical limitation.
+        </p>
+
+        <p>
+          Nature, of course, solved this problem millions of years ago. Nacre — the iridescent inner
+          layer of mollusc shells — is made of 95% aragonite, an extremely brittle material. Yet nacre 
+          is <strong>3,000 times tougher</strong> than the same aragonite in bulk. The secret is entirely architectural.
+        </p>
+
+        <h2>Reverse-Engineering the Microstructure</h2>
+
+        <p>
+          Using a CNN-based classification system I built with OpenCV and TensorFlow, I began
+          systematically identifying and cataloguing the architectured design that distinguished
+          high-toughness designs from low-toughness ones. The patterns that emerged
+          were striking:
+        </p>
+
+        <ul>
+          <li>Layered "brick-and-mortar" composite architectures that absorb impact energy & deflect crack propagation</li>
+          <li>Stochastic (random) 6-sided tile structures which influenced the impact toughness</li>
+          <li>Hierarchical structure operating across multiple length scales simultaneously</li>
+        </ul>
+
+        <p>
+          The insight wasn't that these features existed — researchers had known about them for decades.
+          The insight was that <strong>they could all be produced through deliberate process design</strong>.
+          Laser intensity, focal position, ceramic opacity, power — each manufacturing variable
+          corresponded to a specific microstructural outcome.
+        </p>
+
+        <h2>From Observation to Process</h2>
+
+        <p>
+          I worked backwards from the target microstructure to the process conditions required to produce it. The result was a
+          bio-inspired ceramic manufacturing process that achieved a <strong>220% increase in toughness</strong>
+          compared to conventionally processed samples of the same material. The findings were published in my article:
+        </p>
+
+        <blockquote>
+          https://scholar.google.com/citations?user=5bH0rTgAAAAJ&hl=en
+        </blockquote>
+
+        <p>
+          This principle — that manufacturing process and material architecture are inseparable — has
+          shaped my thinking on professional projects since. For example, qualifying new filaments for 
+          your 3D printer isn't just about what spool of plastic you're feeding into the system; it's about fundemendally
+          understanding and mapping the relationship between print process parameters and the construction of the 
+          crystalline & amorphous microstructure that emerges from them.
+        </p>
+
+        <h2>What This Means for Additive Manufacturing</h2>
+
+        <p>
+          Additive manufacturing offers something no conventional process can match: the ability to
+          programme microstructure spatially. Varying deposition parameters layer by layer, you can
+          create deliberate gradients in crystallinity, porosity, and fibre orientation throughout a
+          part's cross-section.
+        </p>
+
+        <p>
+          We're still in the early stages of exploiting this fully. Most industrial AM today treats
+          the process as a near-net-shape fabrication tool and optimises for dimensional accuracy
+          and surface finish. The next decade will be defined by those who learn to programme the
+          microstructure itself — and the engineers who understand both the materials science and physics
+          will have a significant head start.
+        </p>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Ilhan Esmail</p>
+    </div>
+  </footer>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var navMenu   = document.getElementById('navMenu');
+    navToggle.addEventListener('click', function () {
+      var isOpen = navMenu.classList.toggle('navbar__nav--open');
+      navToggle.classList.toggle('navbar__toggle--open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('.navbar__link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMenu.classList.remove('navbar__nav--open');
+        navToggle.classList.remove('navbar__toggle--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

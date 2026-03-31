@@ -14,9 +14,9 @@
   --text-primary:   #f5f5f7;
   --text-secondary: #a1a1a6;
   --text-tertiary:  #6e6e73;
-  --accent:         #ff6b00;
+  --accent:         #e6841c;
   --accent-dim:     rgba(255, 107, 0, 0.12);
-  --accent-hover:   #ff7d1a;
+  --accent-hover:   #f7a752;
 
   /* Typography */
   --font-serif: 'DM Serif Display', Georgia, serif;

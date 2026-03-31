@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT: Update to your post title -->
+  <title>Post Title — Ilhan Esmail</title>
+  <!-- EDIT: Update to your post summary (shown in search results and link previews) -->
+  <meta name="description" content="A one-sentence summary of your post." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../blog/blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR — do not edit -->
+  <header class="navbar navbar--scrolled" id="navbar">
+    <div class="navbar__inner">
+      <a href="../../index.html" class="navbar__logo">IE<span class="accent">.</span></a>
+      <nav class="navbar__nav" id="navMenu" role="navigation">
+        <ul class="navbar__list">
+          <li><a href="../../index.html#about"      class="navbar__link">About</a></li>
+          <li><a href="../../index.html#experience" class="navbar__link">Experience</a></li>
+          <li><a href="../../index.html#skills"     class="navbar__link">Skills</a></li>
+          <li><a href="../../index.html#education"  class="navbar__link">Education</a></li>
+          <li><a href="../index.html"               class="navbar__link navbar__link--active">Blog</a></li>
+          <li><a href="../../index.html#contact"    class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="post-page">
+    <div class="post-container">
+
+      <!-- Back link — do not edit -->
+      <a href="../index.html" class="post__back">← All Posts</a>
+
+      <!-- POST HEADER -->
+      <header class="post__header">
+        <!-- EDIT: Publication date in "Month DD, YYYY" format -->
+        <time class="post__date" datetime="YYYY-MM-DD">Month DD, YYYY</time>
+        <!-- EDIT: Your post title -->
+        <h1 class="post__title">Post Title Here</h1>
+        <!-- EDIT: One or two sentence summary shown below the title -->
+        <p class="post__excerpt">A short subtitle or summary sentence for the post.</p>
+      </header>
+
+      <!-- EDIT: Hero image — OPTIONAL
+           If you have a hero image, update the src and alt attributes.
+           If you do NOT want a hero image, delete the <img> tag below. -->
+      <img
+        class="post__hero"
+        src="../images/your-image.jpg"
+        alt="Describe the image for accessibility"
+      />
+
+      <!-- POST BODY
+           Write your content inside the <article> tag.
+           Available elements (see blog.css for styling):
+             <p>             — paragraph
+             <h2>            — section heading
+             <h3>            — sub-heading
+             <strong>        — bold/emphasis
+             <em>            — italic
+             <a href="...">  — link
+             <ul><li>        — unordered list
+             <ol><li>        — numbered list
+             <blockquote>    — pull quote
+             <code>          — inline code
+             <pre><code>     — code block
+
+           IMAGES inside the post:
+             <img class="post__img" src="../images/photo.jpg" alt="Description" />
+             Add a caption with:
+             <span class="post__img-caption">Caption text here</span>
+      -->
+      <article class="post-body">
+
+        <!-- EDIT: Replace the content below with your post -->
+
+        <p>
+          Start your post here. This is a paragraph. Write as much as you like — the
+          layout will handle the typography automatically.
+        </p>
+
+        <h2>Section Heading</h2>
+
+        <p>
+          Add sections with <code>&lt;h2&gt;</code> tags. Use <strong>bold</strong> for
+          key terms and <em>italic</em> for emphasis.
+        </p>
+
+        <!-- Example image inside post body -->
+        <!--
+        <img class="post__img" src="../images/your-image.jpg" alt="Description of image" />
+        <span class="post__img-caption">Figure 1 — Caption describing the image.</span>
+        -->
+
+        <h2>Another Section</h2>
+
+        <p>
+          Keep writing. Paragraphs are separated automatically.
+        </p>
+
+        <ul>
+          <li>First point.</li>
+          <li>Second point.</li>
+          <li>Third point.</li>
+        </ul>
+
+        <blockquote>
+          A pull quote or key insight can go here. It will be styled with a blue left border.
+        </blockquote>
+
+        <p>Concluding thoughts here.</p>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Ilhan Esmail</p>
+    </div>
+  </footer>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var navMenu   = document.getElementById('navMenu');
+    navToggle.addEventListener('click', function () {
+      var isOpen = navMenu.classList.toggle('navbar__nav--open');
+      navToggle.classList.toggle('navbar__toggle--open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('.navbar__link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMenu.classList.remove('navbar__nav--open');
+        navToggle.classList.remove('navbar__toggle--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

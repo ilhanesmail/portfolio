@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Ilhan Esmail</title>
+  <meta name="description" content="Writing and thinking by Ilhan Esmail on manufacturing, materials, and engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar navbar--scrolled" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">IE<span class="accent">.</span></a>
+      <nav class="navbar__nav" id="navMenu" role="navigation" aria-label="Main navigation">
+        <ul class="navbar__list">
+          <li><a href="../index.html#about"      class="navbar__link">About</a></li>
+          <li><a href="../index.html#experience" class="navbar__link">Experience</a></li>
+          <li><a href="../index.html#skills"     class="navbar__link">Skills</a></li>
+          <li><a href="../index.html#education"  class="navbar__link">Education</a></li>
+          <li><a href="index.html"               class="navbar__link navbar__link--active">Blog</a></li>
+          <li><a href="../index.html#contact"    class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="blog-main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <header class="blog-header">
+        <p class="section__label">Blog</p>
+        <h1 class="blog-header__title">Writing &amp; thinking</h1>
+        <p class="blog-header__subtitle">
+          On manufacturing, materials science, engineering management, and the occasional detour.
+        </p>
+      </header>
+
+      <!-- ═══════════════════════════════════════════════
+           BLOG POST LIST
+           ─────────────────────────────────────────────
+           HOW TO ADD A NEW POST:
+           1. Copy blog/post-template.html
+              → save as blog/posts/your-post-slug.html
+           2. Fill in all <!-- EDIT: --> fields in that file
+           3. Copy the <article class="blog-list__item"> block below
+           4. Update: href, date, title, excerpt
+           5. If the post has a hero image, add an <img> inside
+              .blog-list__image (remove the --placeholder class)
+           6. Save this file — done.
+      ═══════════════════════════════════════════════ -->
+
+      <div class="blog-list">
+
+        <!-- ─────────────────────────────────────────────
+             NEW POST CARD TEMPLATE
+             Copy this block and fill in the fields.
+             ───────────────────────────────────────────── -->
+        <!--
+        <article class="blog-list__item">
+          <a href="posts/your-post-slug.html" class="blog-list__link">
+            <div class="blog-list__image">
+              <img src="images/your-image.jpg" alt="Short image description" />
+            </div>
+            <div class="blog-list__body">
+              <time class="blog-list__date">Month DD, YYYY</time>
+              <h2 class="blog-list__title">Your Post Title</h2>
+              <p class="blog-list__excerpt">
+                A one or two sentence summary of the post.
+              </p>
+              <span class="blog-list__read">Read more →</span>
+            </div>
+          </a>
+        </article>
+        -->
+        <!-- END TEMPLATE -->
+
+        <!-- Post 1 — update with real content -->
+        <article class="blog-list__item">
+          <a href="posts/example-post.html" class="blog-list__link">
+            <div class="blog-list__image blog-list__image--placeholder"></div>
+            <div class="blog-list__body">
+              <time class="blog-list__date">March 30, 2026</time>
+              <h2 class="blog-list__title">Why Bio-Inspired Microstructures Changed How I Think About Manufacturing</h2>
+              <p class="blog-list__excerpt">
+                A look at the ceramic research that led to a 220% toughness increase — and what nature's design language taught me about process engineering.
+              </p>
+              <span class="blog-list__read">Read more →</span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Ilhan Esmail</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger toggle for blog pages
+    var navToggle = document.getElementById('navToggle');
+    var navMenu   = document.getElementById('navMenu');
+    navToggle.addEventListener('click', function () {
+      var isOpen = navMenu.classList.toggle('navbar__nav--open');
+      navToggle.classList.toggle('navbar__toggle--open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('.navbar__link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMenu.classList.remove('navbar__nav--open');
+        navToggle.classList.remove('navbar__toggle--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

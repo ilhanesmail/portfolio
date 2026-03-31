@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How Bio-Inspired Microstructures Changed My Perspective About Manufacturing — Ilhan Esmail</title>
-  <meta name="description" content="A look at the ceramic research that led to a 220% toughness increase — and what nature's design language taught me about process engineering." />
+  <title>Designing Like Nature: Why Structure Matters More Than Material — Ilhan Esmail</title>
+  <meta name="description" content="A look at how nature-inspired microstructures can be engineered to dramatically improve the toughness of ceramics." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -40,10 +40,9 @@
 
       <header class="post__header">
         <time class="post__date" datetime="2026-03-30">September 30, 2023</time>
-        <h1 class="post__title">How Bio-Inspired Microstructures Changed My Perspective About Manufacturing</h1>
+        <h1 class="post__title">Designing Like Nature: Why Structure Matters More Than Material</h1>
         <p class="post__excerpt">
-          A look at the ceramic research that led to a 220% toughness increase — and what
-          nature's design language taught me about process engineering.
+          A look at how nature-inspired microstructures can be engineered to dramatically improve the toughness of ceramics.
         </p>
       </header>
 
@@ -59,80 +58,114 @@
           During my time at the NRC-CNRC, I explored how to characterise the microstructure of a 
           ceramic sample and understand why certain biological analogues were so much tougher than 
           their synthetic counterparts. This 12-month research exploration, coupled with a fellowship
-          experience at MIT, gave me a fascinating insight into the world of bio-inspired structures and
-          our evolution of manufacturing technologies in order to mimic nature.
+          experience at MIT, gave me a deeper insight into bio-inspired structures and how manufacturing
+          technologies are evolving to mimic nature.
         </p>
 
         <h2>The Problem With Brittle Ceramics</h2>
 
         <p>
-          Ceramics are a valuble class of materials — heat resistant, wear resistant, chemically inert. But
-          their Achilles heel has always been brittleness. Under stress, a crack propagates almost
+          Ceramics are a valuable class of materials — heat resistant, wear resistant, chemically inert. But
+          their Achilles heel has always been brittleness. Under stress, cracks propagate almost
           instantaneously through the material with virtually no energy absorption. For aerospace
           and structural applications, this is a critical limitation.
         </p>
 
         <p>
-          Nature, of course, solved this problem millions of years ago. Nacre — the iridescent inner
-          layer of mollusc shells — is made of 95% aragonite, an extremely brittle material. Yet nacre 
-          is <strong>3,000 times tougher</strong> than the same aragonite in bulk. The secret is entirely architectural.
+          Nature, fortunately, has solved this problem millions of years ago. Take Nacre (mother-of-pearl) for example - it's an iridescent inner
+          layer of mollusc shells made of 95% aragonite, an extremely brittle material. Yet nacre 
+          is <strong>3,000 times tougher</strong> than the same aragonite in bulk. The difference is entirely architectural.
         </p>
 
         <h2>Reverse-Engineering the Microstructure</h2>
 
         <p>
-          Using a CNN-based classification system I built with OpenCV and TensorFlow, I began
-          systematically identifying and cataloguing the architectured design that distinguished
-          high-toughness designs from low-toughness ones. The patterns that emerged
-          were striking:
+          The natural question (yes, pun intended) isn't just <em>what</em> makes these structures effective. We already know the benefits of composite materials
+          and the role of "hard" and "soft" phases to distribute energy and maintain structural rigidity. It's whether we could systematically identify and reproduce 
+          these features in engineered materials. This requires us to develop a way to quantify and reproduce these natural structures.
+        </p>
+
+        <p>
+          Convolutional Neural Networks turned out to be a powerful tool for this. I spent roughly six months
+          (January to June 2021) exploring how deep learning could be used to characterise structures in nature.
+          If nature already provides a library of resilient designs, could we extract the
+          underlying engineering parameters directly from them?
+        </p>
+
+        <p>
+          Using OpenCV for image preprocessing and segmentation, and TensorFlow (via Keras in Python) to build
+          and train the model, I developed a CNN that learned to recognise bio-inspired structural patterns and
+          quantify their level of order and disorder.
+        </p>
+
+        <p>
+          A perfectly ordered system (like a honeycomb) can be described using a small set of fundamental design
+          parameters. But natural systems often sit somewhere between order and randomness. The model was able to
+          characterise this spectrum across a range of structures, including honeycombs, nacre, and even armadillo shells,
+          with a notable level of accuracy. This enabled us to classify stocastic designs in nature and then use computational 
+          methods to reproduce natural structures artificially. 
+        </p>
+
+        <p>
+          At one point, I even tested it on a tiling pattern I photographed at the Montreal Botanical Garden 
+          and it was able to quantify the level of disorder in the layout. A cute test, but a good illustration
+          of how transferable these ideas can be.
+        </p>
+
+        <h2>Key Insight</h2>
+
+        <p>
+          After reproducing the natural patterns using a picosecond laser on alumina tiles, I spent a bit more time 
+          systematically identifying and cataloguing the architectural features that distinguished
+          high-toughness designs from low-toughness ones. The patterns that emerged were striking:
         </p>
 
         <ul>
-          <li>Layered "brick-and-mortar" composite architectures that absorb impact energy & deflect crack propagation</li>
-          <li>Stochastic (random) 6-sided tile structures which influenced the impact toughness</li>
-          <li>Hierarchical structure operating across multiple length scales simultaneously</li>
+          <li>Layered "brick-and-mortar" composite architectures that absorb impact energy and deflect crack propagation are key for tough ceramics</li>
+          <li>Randomness improved toughness to an extent - perfectly ordered structures allow for easier crack propagation</li>
+          <li>Hierarchical structures operating across multiple length scales further improve energy absorption capabilities vs monolithing structures</li>
         </ul>
+        
+        <p>
+          Individually, none of these features were surprising. But taken together, they pointed to something
+          more important: toughness wasn’t a function of composition alone, but of how structure interacts
+          across multiple scales.
+        </p>
 
         <p>
-          The insight wasn't that these features existed — researchers had known about them for decades.
-          The insight was that <strong>they could all be produced through deliberate process design</strong>.
-          Laser intensity, focal position, ceramic opacity, power — each manufacturing variable
-          corresponded to a specific microstructural outcome.
+          This is where the perspective shifted. The insight wasn’t that these features existed — 
+          researchers had known about them for decades. The insight was that <strong>they could be produced 
+          through deliberate process design</strong>.
         </p>
 
         <h2>From Observation to Process</h2>
 
         <p>
-          I worked backwards from the target microstructure to the process conditions required to produce it. The result was a
-          bio-inspired ceramic manufacturing process that achieved a <strong>220% increase in toughness</strong>
-          compared to conventionally processed samples of the same material. The findings were published in a few articles:
-        </p>
-
-        <a href="https://scholar.google.com/citations?user=5bH0rTgAAAAJ&hl=en">Google Scholar Profile</a>
-
-        <p>
-          This principle — that manufacturing process and material architecture are inseparable — has
-          shaped my thinking on professional projects since. For example, qualifying new filaments for 
-          your 3D printer isn't just about what spool of plastic you're feeding into the system; it's about fundemendally
-          understanding and mapping the relationship between print process parameters and the construction of the 
-          crystalline & amorphous microstructure that emerges from them.
-        </p>
-
-        <h2>What This Means for Additive Manufacturing</h2>
-
-        <p>
-          Additive manufacturing offers something no conventional process can match: the ability to
-          programme microstructure spatially. Varying deposition parameters layer by layer, you can
-          create deliberate gradients in crystallinity, porosity, and fibre orientation throughout a
-          part's cross-section.
+          Working backwards from the target microstructure, I mapped process parameters: laser intensity,
+          focal position, material opacity, and power to their resulting structural outcomes. The result was a
+          bio-inspired ceramic manufacturing approach that achieved a <strong>220% increase in toughness</strong>
+          compared to conventionally processed samples of the same material. I published a few peer-reviewed 
+          journal articles on the subject:
         </p>
 
         <p>
-          We're still in the early stages of exploiting this fully. Most industrial AM today treats
-          the process as a near-net-shape fabrication tool and optimises for dimensional accuracy
-          and surface finish. The next decade will be defined by those who learn to programme the
-          microstructure itself — and the engineers who understand both the materials science and physics
-          will have a significant head start.
+          (Publications: <a href="https://scholar.google.com/citations?user=5bH0rTgAAAAJ&hl=en">Google Scholar Profile</a>)
+        </p>
+
+        <h2>What Drove Me to Additive Manufacturing</h2>
+
+        <p>
+          Additive manufacturing makes this idea especially powerful. Unlike conventional processes, it allows engineers
+          to control not just shape, but structure and localized properties. By varying deposition parameters, 
+          it becomes possible to program gradients in crystallinity, porosity, and fibre orientation throughout a part. 
+          In other words, material behaviour itself becomes a design variable.
+        </p>
+
+        <p>
+          Nature doesn’t optimise materials in isolation. Rather, it optimises systems of structure, process, and function simultaneously.
+          As our manufacturing tools become more sophisticated, we’re beginning to approach that same design space.
+          The challenge now is to not only replicate nature’s structures (which we do well today), but to understand the processes that make them possible
+          and to eventually build our own design language from that foundation.
         </p>
 
       </article>

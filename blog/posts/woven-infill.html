@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A New 3D Printing Infill Pattern: Woven Infill — Ilhan Esmail</title>
+  <meta name="description" content="Exploring a new non-planar 3D printing infill pattern designed to improve Z-strength and reduce crack propagation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <header class="navbar navbar--scrolled" id="navbar">
+        <div class="navbar__inner">
+            <a href="../../index.html" class="navbar__logo">Ilhan Esmail<span class="accent">.</span></a>
+            <nav class="navbar__nav" id="navMenu" role="navigation">
+                <ul class="navbar__list">
+                <li><a href="../../index.html#about"      class="navbar__link">About</a></li>
+                <li><a href="../../index.html#experience" class="navbar__link">Experience</a></li>
+                <li><a href="../../index.html#skills"     class="navbar__link">Skills</a></li>
+                <li><a href="../../index.html#education"  class="navbar__link">Education</a></li>
+                <li><a href="../index.html"               class="navbar__link navbar__link--active">Blog</a></li>
+                <li><a href="../../index.html#contact"    class="navbar__link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="post-page">
+        <div class="post-container">
+
+            <a href="../index.html" class="post__back">← All Posts</a>
+
+            <header class="post__header">
+            <time class="post__date" datetime="2026-03-31">March 31, 2026</time>
+            <h1 class="post__title">A New 3D Printing Infill Pattern: Woven Infill</h1>
+            <p class="post__excerpt">
+                A non-planar infill strategy designed to reduce anisotropy and disrupt crack propagation in FDM prints.
+            </p>
+            </header>
+
+            <img
+        class="post__hero"
+        src="../images/woven_infill.png"
+        alt="Woven infill toolpath showing interlocking Z-varied extrusion lines"
+      />
+
+      <article class="post-body">
+
+            <p>
+                One of the biggest limitations in FDM 3D printing is <strong>anisotropy</strong>—parts are significantly weaker in the Z-direction than in the X–Y plane.
+            </p>
+
+            <p>
+                In many cases, Z-strength is only ~60% of in-plane strength. This is a direct result of the layer-by-layer process: each layer cools before the next is deposited, leading to relatively weak interlayer bonding.
+            </p>
+
+            <h2>The Problem with Planar Layers</h2>
+
+            <p>
+                Even within a single layer, <strong>voids can form between extrusion lines</strong>, especially when material viscosity is high or extrusion parameters are suboptimal.
+            </p>
+
+            <p>
+                These voids act as stress concentrators, making it easier for cracks to initiate and propagate. As a result, most printed parts fail along relatively flat, planar paths.
+            </p>
+
+            <img
+              class="post__img"
+              src="../images/3dporosity.png"
+              alt="Cross-section showing void formation between extrusion lines in FDM infill"
+            />
+
+            <blockquote>
+                What if we could disrupt those planar failure paths altogether?
+            </blockquote>
+
+            <h2>Non-Planar Printing as an Opportunity</h2>
+
+            <p>
+                Non-planar 3D printing allows simultaneous motion in X, Y, and Z, removing the constraint of flat layers and enabling new toolpath strategies.
+            </p>
+
+            <p>
+                Building on this idea, I’ve been exploring a new concept: <strong>woven infill</strong>.
+            </p>
+
+            <h2>Woven Infill</h2>
+
+            <p>
+                Instead of depositing flat, parallel lines, woven infill introduces controlled Z-variation into the toolpath, creating an interlocking structure across layers.
+            </p>
+
+            <ul>
+                <li>Z-offsets are approximately half a layer height</li>
+                <li>Spacing between paths is ~2× extrusion width</li>
+            </ul>
+
+            <h2>Why Add Gaps?</h2>
+
+            <p>
+                At first glance, this approach seems counterintuitive—why introduce gaps when infill is supposed to eliminate them?
+            </p>
+
+            <p>
+                The key idea is <strong>intentional underfilling followed by compression</strong>. Adjacent paths overlap in 3D space, forcing material into void regions and increasing interlocking between layers.
+            </p>
+
+            <h2>Hypothesis</h2>
+
+            <ul>
+                <li>Disrupts planar crack propagation</li>
+                <li>Increases interlayer bonding area</li>
+                <li>Reduces effective void size</li>
+            </ul>
+
+            <p>
+                This is an early-stage concept, but it opens up interesting directions for experimentation and optimization.
+            </p>
+
+            </article>
+
+        </div>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer__text">&copy; 2026 Ilhan Esmail</p>
+  </div>
+</footer>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var navMenu   = document.getElementById('navMenu');
+    navToggle.addEventListener('click', function () {
+      var isOpen = navMenu.classList.toggle('navbar__nav--open');
+      navToggle.classList.toggle('navbar__toggle--open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('.navbar__link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMenu.classList.remove('navbar__nav--open');
+        navToggle.classList.remove('navbar__toggle--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

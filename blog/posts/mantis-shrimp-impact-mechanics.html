@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bio-Inspired Impact Resistance: Lessons from the Mantis Shrimp — Ilhan Esmail</title>
+  <meta name="description" content="The mantis shrimp delivers one of the fastest and most powerful strikes in nature. This post breaks down the biomechanics behind it and explores how its structure could inspire engineered materials." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar navbar--scrolled" id="navbar">
+    <div class="navbar__inner">
+      <a href="../../index.html" class="navbar__logo">Ilhan Esmail<span class="accent">.</span></a>
+      <nav class="navbar__nav" id="navMenu" role="navigation">
+        <ul class="navbar__list">
+          <li><a href="../../index.html#about"      class="navbar__link">About</a></li>
+          <li><a href="../../index.html#experience" class="navbar__link">Experience</a></li>
+          <li><a href="../../index.html#skills"     class="navbar__link">Skills</a></li>
+          <li><a href="../../index.html#education"  class="navbar__link">Education</a></li>
+          <li><a href="../index.html"               class="navbar__link navbar__link--active">Blog</a></li>
+          <li><a href="../../index.html#contact"    class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="post-page">
+    <div class="post-container">
+
+      <a href="../index.html" class="post__back">← All Posts</a>
+
+      <header class="post__header">
+        <time class="post__date" datetime="2026-04-03">April 3, 2026</time>
+        <h1 class="post__title">Bio-Inspired Impact Resistance: Lessons from the Mantis Shrimp</h1>
+        <p class="post__excerpt">The mantis shrimp delivers one of the fastest and most powerful strikes in nature. This post breaks down the biomechanics behind it and explores how its structure could inspire engineered materials.</p>
+      </header>
+
+      <img
+        class="post__hero"
+        src="../images/mantis-hero.jpeg"
+        alt="Close-up of a mantis dactyl club"
+      />
+      <article class="post-body">
+        <p>I came across a meme about the striking power of mantis shrimp, which led me down a rabbit hole into their biomechanics. These creatures can accelerate a limb faster than a bullet and generate forces thousands of times their own body weight. This raises two key questions: how do they generate that level of power, and how does their anatomy survive it?</p>
+        <h2>The Spring–Latch–Mass System</h2>
+        <p>Conventional muscle-driven motion like a human punch is too slow to produce the accelerations observed in mantis shrimp. Instead, they rely on a spring–latch system, similar in principle to a mousetrap or crossbow.</p>
+        <p><img class="post__img" alt="mantis biomechanics" src="../images/mantis-mech.jpeg" /></p>
+        <p>The shrimp slowly contracts its flexor muscles, compressing a structure known as the <em>saddle</em>. This acts as a biological spring, storing elastic potential energy. A latch mechanism holds this system in a loaded state. When a target is acquired, a small trigger muscle releases the latch, transferring the stored energy almost instantaneously into the <strong>dactyl club</strong> (the striking appendage).</p>
+        <p>This mechanism allows the club to reach accelerations on the order of <strong>10,000g</strong>, making it one of the fastest known appendage movements in the animal kingdom.</p>
+        <p><img class="post__img" alt="mantis club anatomy" src="../images/mantis-anat.jpeg" /></p>
+        <h2>Impact + Cavitation = Dual Strike</h2>
+        <p>As the dactyl club moves through water at extreme speed, it generates a <strong>low-pressure region</strong> in its wake. This causes the surrounding water to vaporize into bubbles, a process known as cavitation.</p>
+        <p>When these bubbles collapse milliseconds later, they produce a secondary <strong>shockwave</strong> that can be nearly as powerful as the initial impact. In effect, the target is struck twice: once by the club itself, and again by the cavitation collapse.</p>
+        <p>Cavitation is also responsible for erosion in marine propellers, highlighting just how destructive this effect can be. There’s a <a href="https://asknature.org/strategy/appendage-creates-tremendous-forces/">useful animation of the process here</a>.</p>
+        <h2>Absorbing the Impact</h2>
+        <p>This leads to a more interesting engineering problem: how does the dactyl club survive repeated high-energy impacts without catastrophic failure?</p>
+        <p>The outer layer of the club is composed of hydroxyapatite, a hard mineral also found in human bone. But, the internal structure is where things become particularly interesting.</p>
+        <p><img class="post__img" alt="mantis club structure" src="../images/mantis-club-structure.jpg" /></p>
+        <p>The interior consists of a helicoidal (spiral) arrangement of mineralized fibers. Between these layers are softer phases composed of chitin and protein. This layered composite structure serves two key functions:</p>
+        <ul>
+        <li><strong>Energy dissipation</strong> through controlled deformation  </li>
+        <li><strong>Crack deflection</strong>, preventing fractures from propagating along a single plane  </li>
+        </ul>
+        <p>The result is a material that combines high stiffness with exceptional toughness—properties that are typically difficult to achieve simultaneously.</p>
+        <p>This architecture closely resembles the nacre (mother-of-pearl) structures I explored in <a href="https://ilhanesmail.com/blog/posts/bio-ceramics">previous work</a>, where layered composites achieve similar resistance to fracture.</p>
+        <h2>Engineering Implications</h2>
+        <p>The helicoidal architecture of the mantis shrimp club has attracted interest for applications in helmets, body armor, and aerospace impact structures. However, manufacturing such geometries at scale remains a major constraint.</p>
+        <p>Most traditional processes struggle to produce controlled, multi-scale fiber orientations. This is where additive manufacturing becomes relevant. With sufficient control over toolpaths and material deposition, it may be possible to approximate these biological structures.</p>
+        <p>There is a clear opportunity to explore bio-inspired infill strategies that mimic helicoidal layering. Its worth programming a helicoidal infill prototype to see if it can improve impact resistance in printed parts. I may do this in future work.</p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Ilhan Esmail</p>
+    </div>
+  </footer>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var navMenu   = document.getElementById('navMenu');
+    navToggle.addEventListener('click', function () {
+      var isOpen = navMenu.classList.toggle('navbar__nav--open');
+      navToggle.classList.toggle('navbar__toggle--open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('.navbar__link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navMenu.classList.remove('navbar__nav--open');
+        navToggle.classList.remove('navbar__toggle--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>
